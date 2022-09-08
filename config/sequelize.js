@@ -1,10 +1,10 @@
 const {Sequelize} = require ('sequelize');
 
 const sequelize = new Sequelize({
-  database: 'eduwork-crud-v2',
-  host: 'localhost',
-  username: 'root',
-  password: 'root',
+  database: 'heroku_751fd57f69c8390',
+  host: 'us-cdbr-east-06.cleardb.net',
+  username: 'b6169c37db081c',
+  password: '57385a1e',
   dialect: 'mysql'
 });
 
