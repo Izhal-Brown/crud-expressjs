@@ -53,7 +53,7 @@ const store = async (req, res) => {
     fs.renameSync(image.path, target)
     try {
       await Product.sync();
-      const result = await Product.create({ users_id, name, price, stock, status, image_url: `http://localhost:3000/public/${image.originalname}` });
+      const result = await Product.create({ users_id, name, price, stock, status, image_url: `https://remotemysql.com:3306/public/${image.originalname}` });
       res.send(result);
     } catch (e) {
       res.send(e);
@@ -70,20 +70,20 @@ const update = async (req, res) => {
     fs.renameSync(image.path, target)
     try {
       await Product.sync();
-      await Product.update({ users_id, name, price, stock, status, image_url:`http://localhost:3000/public/${image.originalname}`}, { where: { id: req.params.id } });
-      res.send({ 
-        "message" : "Product Updated"
-       });
+      await Product.update({ users_id, name, price, stock, status, image_url: `https://remotemysql.com:3306/public/${image.originalname}` }, { where: { id: req.params.id } });
+      res.send({
+        "message": "Product Updated"
+      });
     } catch (e) {
       res.send(e);
     }
   } else {
     try {
       await Product.sync();
-      await Product.update({ users_id, name, price, stock, status}, {where: { id: req.params.id } });
-      res.send({ 
-        "message" : "Product Updated"
-       });
+      await Product.update({ users_id, name, price, stock, status }, { where: { id: req.params.id } });
+      res.send({
+        "message": "Product Updated"
+      });
     } catch (e) {
       res.send(e);
     }
@@ -97,7 +97,7 @@ const destroy = async (req, res) => {
     const target = path.join(__dirname, '../../uploads', image.originalname)
     fs.unlinkSync(image.path, target);
     await Product.sync();
-    await Product.destroy({where: { id: req.params.id } })
+    await Product.destroy({ where: { id: req.params.id } })
     res.json({
       "message": "product Deleted"
     })

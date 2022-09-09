@@ -7,7 +7,6 @@ const productRouterV2 = require('./app/product_v2/routes')
 // const log = require('./middlewares/logger')
 const logger = require('morgan')
 
-
 // membuat routing langsung
 // app.use('/',(req, res) => {
 //   res.send({
@@ -32,8 +31,9 @@ app.use((req, res, next) => { //membuat halaman jika halaman yang dituju ngga ad
   })
 })
 
+// app.listen(3000, () => console.log('server: http://localhost:3000'))
 
-let port = process.env.PORT || 3001;
+let port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log('App is running at the port ${port}')
