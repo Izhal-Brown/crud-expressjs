@@ -1,11 +1,17 @@
 const {Sequelize} = require ('sequelize');
 
 const sequelize = new Sequelize({
-  host  : 'localhost',
-  user  : 'root',
-  password  : 'root',
-  database  : 'eduwork-crud-v2',
-  dialect: 'mysql'
+  database: 'EEwafzh6yE',
+  host: 'remotemysql.com',
+  username: 'EEwafzh6yE',
+  password: 'pV4Yy5d0D7',
+  port:3306,
+  dialect: 'mysql',
+  // database: 'eduwork-crud-v2',
+  // host: 'localhost',
+  // username: 'root',
+  // password: 'root',
+  // dialect: 'mysql'
 });
 
 
