@@ -53,7 +53,7 @@ const store = async (req, res) => {
     fs.renameSync(image.path, target)
     try {
       await Product.sync();
-      const result = await Product.create({ users_id, name, price, stock, status, image_url: `crud-xpressjs.herokuapp.com/public/${image.originalname}` });
+      const result = await Product.create({ users_id, name, price, stock, status, image_url: `https://crud-xpressjs.herokuapp.com/public/${image.originalname}` });
       res.send(result);
     } catch (e) {
       res.send(e);
@@ -70,7 +70,7 @@ const update = async (req, res) => {
     fs.renameSync(image.path, target)
     try {
       await Product.sync();
-      await Product.update({ users_id, name, price, stock, status, image_url: `crud-xpressjs.herokuapp.com/public/${image.originalname}` }, { where: { id: req.params.id } });
+      await Product.update({ users_id, name, price, stock, status, image_url: `https://crud-xpressjs.herokuapp.com/public/${image.originalname}` }, { where: { id: req.params.id } });
       res.send({
         "message": "Product Updated"
       });
