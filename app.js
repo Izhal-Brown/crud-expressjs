@@ -36,6 +36,6 @@ app.use((req, res, next) => { //membuat halaman jika halaman yang dituju ngga ad
 let port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-  console.log(`App is running at the port https://remotemysql.com:${port}/api/v2/product`)
+  console.log(`App is running at the port https://crud-xpressjs.herokuapp.com:${port}/api/v2/product`)
 })
 
