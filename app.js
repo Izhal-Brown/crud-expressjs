@@ -33,7 +33,7 @@ app.use((req, res, next) => { //membuat halaman jika halaman yang dituju ngga ad
 
 // app.listen(3000, () => console.log('server: http://localhost:3000'))
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 3306;
 
 app.listen(port, () => {
   console.log(`App is running at the port https://crud-xpressjs.herokuapp.com:${port}/api/v2/product`)
