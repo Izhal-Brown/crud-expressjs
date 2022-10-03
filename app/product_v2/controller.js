@@ -54,6 +54,7 @@ const store = async (req, res) => {
     try {
       await Product.sync();
       const result = await Product.create({ users_id, name, price, stock, status, image_url: `https://remotemysql.com:3306/public/${image.originalname}` });
+      res.status(201)
       res.send(result);
     } catch (e) {
       res.send(e);
